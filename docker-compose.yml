@@ -17,7 +17,6 @@ services:
       - "traefik.http.routers.appflowy.entrypoints=https"
       - "traefik.http.routers.appflowy.tls=true"
       - "traefik.http.routers.appflowy.rule=Host(`appflowy.chrisforte.dev`)"
-      - "traefik.http.routers.appflowy.middlewares=securityHeaders@file"
       - "traefik.http.routers.appflowy.service=appflowy-loadbalancer"
       - "traefik.http.services.appflowy-loadbalancer.loadbalancer.server.port=80"
       - "traefik.http.services.appflowy-loadbalancer.loadbalancer.server.scheme=http"
