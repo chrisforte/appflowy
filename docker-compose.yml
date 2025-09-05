@@ -167,7 +167,7 @@ services:
       - "traefik.docker.network=proxy"
       - "traefik.http.routers.appflowy_cloud.entrypoints=https"
       - "traefik.http.routers.appflowy_cloud.tls=true"
-      - "traefik.http.routers.appflowy_cloud.rule=Host(`${FQDN}`) && PathPrefix(`/api`)"
+      - "traefik.http.routers.appflowy_cloud.rule=Host(`${FQDN}`) && PathPrefix(`/api`) || Host(`${FQDN}`) && PathPrefix(`/ws`)"
       - "traefik.http.services.appflowy_cloud.loadbalancer.server.port=8000"
 
   admin_frontend:
