@@ -48,7 +48,7 @@ services:
       - "traefik.docker.network=proxy"
       - "traefik.http.routers.appflowy_pgadmin.entrypoints=https"
       - "traefik.http.routers.appflowy_pgadmin.tls=true"
-      - "traefik.http.routers.appflowy_pgadmin.rule=Host(`${FQDN}`) && PathPrefix(`/gotrue`)"
+      - "traefik.http.routers.appflowy_pgadmin.rule=Host(`${FQDN}`) && PathPrefix(`/pgadmin`)"
       - "traefik.http.routers.appflowy_pgadmin.middlewares=appflowy_pgadmin-strip"
       - "traefik.http.middlewares.appflowy_pgadmin-strip.headers.customrequestheaders.X-Script-Name=/pgadmin"
       - "traefik.http.services.appflowy_pgadmin.loadbalancer.server.port=80"
